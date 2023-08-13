@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import '../styles/AddDayDetails.css'
-import { useLocation } from 'react-router-dom';
+
 
 import {
   TextField,
@@ -22,8 +22,7 @@ import {
   TableContainer,
   TableRow,
   Paper,
-  TableHead,
-  Grid,
+  TableHead
 } from "@mui/material";
 
 const Adddaydetails = () => {
@@ -35,7 +34,6 @@ const Adddaydetails = () => {
   const [date, setDate] = useState(formattedDateTime);
   const [autocompleteOptions, setAutocompleteOptions] = useState([]);
   const [selectedFarmer, setSelectedFarmer] = useState(null);
-  const [inputValue, setInputValue] = useState("");
   const [selectedFarmerId, setSelectedFarmerId] = useState("");
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
@@ -95,24 +93,7 @@ Promise.all(avatarPromises).then((avatars) => {
     setEndDate(event.target.value);
   };
 
-  const handleAutocompleteInputChange = (event, newValue) => {
-    if (typeof newValue === "string") {
-      setInputValue(newValue);
-    } else if (newValue && newValue.inputValue) {
-      setInputValue(newValue.inputValue);
-    } else {
-      setInputValue("");
-    }
   
-    // Search for matches in both name and ID
-    const selectedFarmer = autocompleteOptions.find(
-      (option) =>
-        option.name.toLowerCase().includes(newValue.toLowerCase()) ||
-        option.id === newValue
-    );
-    setSelectedFarmer(selectedFarmer);
-    setSelectedFarmerId(selectedFarmer ? selectedFarmer.id : "");
-  };
 
   const handleAddRow = () => {
     const defaultExpense = {
@@ -157,8 +138,6 @@ Promise.all(avatarPromises).then((avatars) => {
       })),
     };
     console.log(postObject);
-
-    const expensesArray = expenses.map((expense) => ({ ...expense }));
 
     try {
       const response = await axios.post(

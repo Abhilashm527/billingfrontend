@@ -11,7 +11,7 @@ import {
 // ----------------------------------------------------------------------
 
 export default function DashboardAppPage() {
-  const theme = useTheme();
+
 
   return (
     <>

@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams, Link } from 'react-router-dom';
 import '../../styles/GetFarmerDayDetailsById.css'; // Import the CSS file
 
-import { Dialog, DialogTitle, DialogContent,DialogActions,Button, InputLabel,TableCell,TableBody,TableRow,TableContainer,Paper,Table,TableHead, Input, TextField, Stack } from '@mui/material'; // Import Material-UI components
+import { Button, InputLabel,TableCell,TableBody,TableRow,TableContainer,Paper,Table,TableHead, Input, TextField, Stack } from '@mui/material'; // Import Material-UI components
 
 import BillDialog from './BillDialog';
 
@@ -48,14 +48,6 @@ const GetFarmerDetailsById = () => {
 
   const handleChangeEndDate = (event) => {
     setEndDate(event.target.value);
-  };
-  const handlePrint = () => {
-    const printContents = document.getElementById('printable-area').innerHTML;
-    const originalContents = document.body.innerHTML;
-
-    document.body.innerHTML = printContents;
-    window.print();
-    document.body.innerHTML = originalContents;
   };
 
 

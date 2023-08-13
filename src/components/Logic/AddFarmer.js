@@ -59,7 +59,6 @@ const AddFarmer = () => {
     const url = 'https://smfbilling.azurewebsites.net/addFarmer';
     const data = {
       name: userDetails.name,
-      phoneNumber: userDetails.phoneNumber,
       address: userDetails.address,
     };
     console.log(data);
