@@ -55,7 +55,7 @@ const AddFarmer = () => {
     event.preventDefault();
 
     // Make a request to the API using axios
-    const url = 'https://smfbilling.azurewebsites.net/addFarmer';
+    const url = 'https://smfbillingbe.azurewebsites.net/addFarmer';
     const data = {
       name: userDetails.name,
       address: userDetails.address,

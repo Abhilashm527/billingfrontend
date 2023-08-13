@@ -98,7 +98,7 @@ export default function UserPage() {
 const [avatarImports, setAvatarImports] = useState([]); 
 
 useEffect(() => {
-  const url = 'https://smfbilling.azurewebsites.net/getAllFarmers';
+  const url = 'https://smfbillingbe.azurewebsites.net/getAllFarmers';
   axios
     .get(url)
     .then((response) => {
@@ -159,6 +159,7 @@ Promise.all(avatarPromises).then((avatars) => {
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
+  console.log(farmersData)
 
   const handleChangeRowsPerPage = (event) => {
     setPage(0);
