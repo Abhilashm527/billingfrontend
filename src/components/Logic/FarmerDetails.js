@@ -96,19 +96,19 @@ export default function UserPage() {
 
   const [farmersData, setFarmersData] = useState([]);
 const [avatarImports, setAvatarImports] = useState([]); 
-const [error, setError] = useState(null);
+
 useEffect(() => {
   const url = 'https://smfbilling.azurewebsites.net/getAllFarmers';
   axios
     .get(url)
     .then((response) => {
       setFarmersData(response.data);
-      setError(null);
+
     })
     .catch((error) => {
-      setError('Error fetching data. An error occurred.');
+      console.log('Error fetching data. An error occurred.');
     });
-    console.log(farmersData)
+    
   // Dynamically import avatar images
   const avatarPromises = Array.from({ length: 14 }, (_, i) =>
   import(`../../../public/assets/images/avatars/avatar_${i + 1}.jpg`).then((module) => module.default)
@@ -117,7 +117,7 @@ useEffect(() => {
 Promise.all(avatarPromises).then((avatars) => {
   setAvatarImports(avatars);
 });
-}, []);
+}, [farmersData]);
  console.log(farmersData)
   const handleOpenMenu = (event) => {
     setOpen(event.currentTarget);
@@ -215,7 +215,7 @@ console.log(filteredFarmers.length)
                 />
                 <TableBody>
                   {filteredFarmers.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row,index) => {
-                    const { id, name, phoneNumber, address } = row;
+                    const { id, name, address } = row;
                     const selectedUser = selected.indexOf(id) !== -1;
                     return (
                       <TableRow hover key={id} tabIndex={-1} role="checkbox" selected={selectedUser}>

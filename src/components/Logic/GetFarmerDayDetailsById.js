@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams, Link } from 'react-router-dom';
 import '../../styles/GetFarmerDayDetailsById.css'; // Import the CSS file
 
-import { Button, InputLabel,TableCell,TableBody,TableRow,TableContainer,Paper,Table,TableHead, Input, TextField, Stack } from '@mui/material'; // Import Material-UI components
+import { Button, InputLabel,TableCell,TableBody,TableRow,TableContainer,Paper,Table,TableHead,  TextField,  } from '@mui/material'; // Import Material-UI components
 
 import BillDialog from './BillDialog';
 

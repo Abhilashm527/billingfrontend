@@ -44,7 +44,6 @@ const AddFarmer = () => {
    
   ];
 
-  const [successMessage, setSuccessMessage] = useState('');
   const [avatarImports, setAvatarImports] = useState([]); 
   const [addedFarmers, setAddedFarmers] = useState([]);
   const [farmerData, setFarmersData] = useState([]);
@@ -127,9 +126,9 @@ const AddFarmer = () => {
             Submit
           </Button>
         </Box>
-        {successMessage && (
+        { (
           <Box sx={{ mt: 2 }}>
-            <Typography variant="body1">{successMessage}</Typography>
+            <Typography variant="body1">{"successMessage"}</Typography>
           </Box>
         )}
       </form>
