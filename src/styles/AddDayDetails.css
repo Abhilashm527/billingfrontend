@@ -1,0 +1,46 @@
+.add-farmer-details{
+    margin: 0;
+    width: auto;
+    display: flex;
+}
+.farmer-details-main
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+}
+.farmer-detail{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+}
+@media only screen and (max-width: 600px){
+    .add-farmer-details{
+        margin: 0;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+
+    }
+    .search-genrate-bill{
+        display: flex;
+        flex-direction: column;
+       
+    }
+    
+}
+
+/* GetFarmerDetails.css */
+
+/* Style for the container div */
+.container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
